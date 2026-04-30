@@ -1,16 +1,114 @@
-# React + Vite
+# eVTOL Simulation & Visualization Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a **web-based 3D simulation platform** for visualizing eVTOL (electric Vertical Take-Off and Landing) missions. It renders a dynamic environment with terrain, infrastructure, and mission assets, while replaying trajectory data from a backend service.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The system is designed to support:
 
-## React Compiler
+* Mission playback
+* FPV (First Person View) and chase cameras
+* Real-time telemetry visualization
+* Future integration with obstacle detection and avoidance systems
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. 3D Environment (Three.js)
+### 2. eVTOL Simulation
+### 3. Camera System
+### 4. Trajectory System
+### 5. Telemetry Output
+### 6. Model Handling
+
+## Tech Stack
+
+| Layer        | Technology                   |
+| ------------ | ---------------------------- |
+| Frontend     | React                        |
+| 3D Engine    | Three.js                     |
+| Model Format | GLB (GLTF)                   |
+| Backend      | Spring Boot (trajectory API) |
+| Rendering    | WebGL                        |
+
+---
+
+## Setup Instructions
+
+### 1. Clone Repository
+
+```bash
+git clone <your-repo-url>
+cd <project-folder>
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Frontend
+
+```bash
+npm run dev
+```
+
+### 4. Start Backend
+
+Ensure backend is running at:
+
+```
+http://localhost:8080
+```
+
+---
+
+## Controls
+
+| Action      | Description           |
+| ----------- | --------------------- |
+| Play        | Start simulation      |
+| Pause       | Stop simulation       |
+| Reset       | Reset mission         |
+| Speed       | Adjust playback speed |
+| FPV Capture | Save current frame    |
+
+---
+
+## Camera Modes
+
+| Mode     | Behavior               |
+| -------- | ---------------------- |
+| OVERVIEW | Free orbit             |
+| CHASE    | Follows EVTOL          |
+| FPV      | Cockpit-mounted camera |
+
+---
+
+## Future Enhancements
+
+* Obstacle detection visualization
+* Real-time WebSocket data integration
+* Multi-drone simulation
+* Physics-based flight model
+* Collision avoidance system
+* UI overlays (radar, minimap)
+
+---
+
+## Contribution Guidelines
+
+* Keep rendering logic modular
+* Avoid blocking operations in animation loop
+* Reuse models using cloning
+* Maintain consistent coordinate system
+
+---
+
+## Author
+
+@Sreehithaas
+@ChandanaSamaleti
+@AkshayaGampala
